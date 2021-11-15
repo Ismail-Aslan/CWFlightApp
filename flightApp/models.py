@@ -22,8 +22,8 @@ class Flight(models.Model):
     operatingAirlines = models.CharField(max_length=20)
     departureCity = models.CharField(max_length=20)
     arrivalCity = models.CharField(max_length=20)
-    dateOfDeparture = models.DateField()
-    estimatedTimeOfDeparture = models.TimeField()
+    dateOfDeparture = models.DateField(blank= True,null=True)
+    estimatedTimeOfDeparture = models.TimeField(blank= True,null=True)
 
     def __str__(self):
         return f'{self.flightNumber} {self.operatingAirlines} {self.departureCity}-{self.arrivalCity} {self.dateOfDeparture}-{self.estimatedTimeOfDeparture}'
