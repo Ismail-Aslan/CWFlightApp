@@ -32,3 +32,21 @@ class FlightOperations(generics.RetrieveUpdateDestroyAPIView):
     queryset = Flight.objects.all()
     lookup_field="id"
     # permission_classes = [IsAddedByUserOrReadOnly]
+    
+class PassengerList(generics.ListCreateAPIView):
+    serializer_class = PassengerSerializer
+    queryset = Passenger.objects.all()
+
+
+class ReservationList(generics.ListCreateAPIView):
+    serializer_class = ReservationSerializer
+    queryset = Reservation.objects.all()
+    
+    
+    
+    
+class ReservationOperations(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = ReservationSerializer
+    queryset = Reservation.objects.all()
+    lookup_field="id"
+    # permission_classes = [IsAddedByUserOrReadOnly]
